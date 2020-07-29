@@ -10,26 +10,25 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio() 
 {
-	let precioLamparitas = 35;
-	let cantLamparitas;
-	let marcaLamparitas;
+	let precio = 35;
+	let cantidad;
+	let marca;
 	let descuento;
-	let diferenciaDesc;
 	let precioDescuento;
 	let impuestoIIBB;
 	let totalIIBB;
 
-	cantLamparitas = parseInt(document.getElementById("txtCantidad").value);
+	cantidad = parseInt(document.getElementById("txtCantidad").value);
 	marcaLamparitas = document.getElementById("Marca").value;
 
-	switch(cantLamparitas)
+	switch(cantidad)
 	{
-		case cantLamparitas >= 6:
+		case cantidad >= 6:
 			descuento = 0.50;
 			break;
 
-		case cantLamparitas == 5:
-			if (marcaLamparitas == "ArgentinaLuz")
+		case cantidad == 5:
+			if (marca == "ArgentinaLuz")
 			{
 				descuento = 0.60;
 
@@ -40,8 +39,8 @@ function CalcularPrecio()
 			}
 			break;
 
-		case cantLamparitas == 4:
-			if (marcaLamparitas == "ArgentinaLuz" || marcaLamparitas == "FelipeLamparas")
+		case cantidad == 4:
+			if (marca == "ArgentinaLuz" || marca == "FelipeLamparas")
 			{
 				descuento = 0.75
 			}
@@ -51,14 +50,14 @@ function CalcularPrecio()
 				descuento = 0.80
 			}
 
-		case cantLamparitas == 3:
+		case cantidad == 3:
 
-			if(marcaLamparitas == "ArgentinaLuz") 
+			if(marca == "ArgentinaLuz") 
 			{
 				descuento = 0.85;
 			}
 
-			else if (marcaLamparitas == "FelipeLamparas")
+			else if (marca == "FelipeLamparas")
 			{
 				descuento = 0.90;
 			}
@@ -70,14 +69,14 @@ function CalcularPrecio()
 
 
 		default:
-			if (cantLamparitas < 3)
+			if (cantidad < 3)
 			{
 				descuento = 1;
 			}	
 
 	}
 
-	precioDescuento= parseFloat((cantLamparitas * precioLamparitas)* descuento).toFixed(2); 	
+	precioDescuento= parseFloat((cantidad * precio)* descuento).toFixed(2); 	
 	
 
 	parseFloat(document.getElementById("txtIdprecioDescuento").value = precioDescuento);
